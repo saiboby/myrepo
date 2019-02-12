@@ -1,1 +1,1 @@
-this is first program runngin in jenkins
+print 'this is first program runngin in jenkins'
