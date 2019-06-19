@@ -37,7 +37,7 @@ try :
                         print("Workspace clean_up has been done on Magellan host")
                 else:
                         print("Mention the exact argument as {}".format(D.keys()))
-                        subprocess.call(['exit','1'])
+                        #subprocess.call(['exit','1'])
 
         cleanup(sys.argv[1])
 except IndexError:
