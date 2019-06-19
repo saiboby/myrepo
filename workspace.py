@@ -37,8 +37,10 @@ try :
                         print("Workspace clean_up has been done on Magellan host")
                 else:
                         print("Mention the exact argument as {}".format(D.keys()))
+                        subprocess.call(['exit','1'])
 
         cleanup(sys.argv[1])
 except IndexError:
         print("Getting Index rrox, Please enter the argument as {}".format(D.keys()))
+        subprocess.call(['exit','1'])
         #subprocess.call(['sshpass','-p', aca["password"],'ssh', '-o', 'StrictHostKeyChecking=no','-p',aca["port"] ,aca["username"] +'@'+ aca["ip_address"]+ ' ' ,'rm -rf /opt/B*'])
