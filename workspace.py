@@ -40,4 +40,4 @@ try :
         cleanup(sys.argv[1])
 except IndexError:
         print("Getting Index rrox, Please enter the argument as {}".format(D.keys()))
-        subprocess.call(['sshpass','-p', aca["password"],'ssh', '-o', 'StrictHostKeyChecking=no','-p',aca["port"] ,aca["username"] +'@'+ aca["ip_address"]+ ' ' ,'rm -rf /opt/B*'])
+        #subprocess.call(['sshpass','-p', aca["password"],'ssh', '-o', 'StrictHostKeyChecking=no','-p',aca["port"] ,aca["username"] +'@'+ aca["ip_address"]+ ' ' ,'rm -rf /opt/B*'])
