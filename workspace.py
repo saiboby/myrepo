@@ -25,7 +25,10 @@ try :
                         print("executing on aca")
                         #os.system('sshpass -p "x" ssh -o StrictHostKeyChecking=no root@192.168.50.11 "mkdir -p /opt/aca231"')
                         subprocess.call(args1)
-                        print("Workspsace clean_up has been done on ACA host")
+                        if subprocess.call(['echo','$?']) == 0:
+                                print("Workspsace clean_up has been done on ACA host")
+                        else:
+                                print("Didnt connect to the host")
                 elif param == "mag":
                         #os.system('sshpass -p "$x" ssh -o StrictHostKeyChecking=no root@192.168.50.11 "mkdir -p /opt/mag231"')
                         subprocess.call(args2)
