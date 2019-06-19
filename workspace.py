@@ -16,7 +16,7 @@ try :
         # print(pw1)
         # print(aca["hostname"])
 
-        args1 = ['sshpass','-p', aca["password"],'ssh', '-o', 'StrictHostKeyChecking=no','-p',aca["port"] ,aca["username"] +'@'+ aca["ip_address"]+ ' ' ,'rm -rf /opt/B*']
+        args1 = ['sshpass','-p', aca["password"],'ssh', '-o', 'StrictHostKeyChecking=no','-p',aca["port"] ,aca["username"] +'@'+ aca["ip_address"]+ ' ' ,'rm -rf /oopepepe']
         args2 = ['sshpass','-p', mag["password"],'ssh', '-o', 'StrictHostKeyChecking=no', mag["username"] +'@'+ mag["ip_address"]+ ' ' ,'sudo mkdir -p /opt/Sai123']
 
         def cleanup(param):
