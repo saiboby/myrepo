@@ -30,7 +30,7 @@ try :
                                 print("Workspsace clean_up has been done on ACA host")
                         else:
                                 print("Didnt connect to the host")
-                                subprocess.call(['exit','1'])
+                                #subprocess.call(['exit','1'])
                 elif param == "mag":
                         #os.system('sshpass -p "$x" ssh -o StrictHostKeyChecking=no root@192.168.50.11 "mkdir -p /opt/mag231"')
                         subprocess.call(args2)
