@@ -1,1 +1,3 @@
-print 'welcome to python'
+import subprocess
+
+subprocess.call(['exit','1'])
