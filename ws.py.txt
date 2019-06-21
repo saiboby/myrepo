@@ -1,0 +1,135 @@
+import argparse
+import os, sys
+
+def clean_up():
+	if args.IPaddress:
+		subprocess.call(['sshpass','-p',args.password,'ssh','-o','StrictHostKeyChecking=no','-p',args.port,args.username+'@'+args.IPaddress,' ',args.workspace])
+		
+		if subprocess.call(['echo','$?']) == 0:
+			print("Workspsace clean_up has been done on ACA host")
+		else:
+			print("didnt log in")
+	else:
+		print("Please mention arguemnts")
+
+def __args_parser(parser):
+    parser.add_argument('-ip', '--IPaddress',
+                        required=True,
+                        action='store',
+                        help='DNA App package build version')
+
+    parser.add_argument('-un', '--username',
+                        required=True,
+                        action='store',
+                        help='only run code coverage')
+
+    parser.add_argument('-pw', '--password',
+                        required=True,
+                        action='store',
+                        help='APP Name {CPP,ACA,DCS,. . . }')
+
+    parser.add_argument('-po', '--port',
+                        required=True,
+                        action='store',
+                        default=True,
+                        help='default is to run from container  ( known base path )')
+
+    parser.add_argument('-ws', '--workspace',
+                        required=True,
+                        action='store',
+                        help='Applicatio Source Code Base Directory ')
+
+
+def main(argv):
+	print("This is the name of the script: ", sys.argv[0])
+    print("Number of arguments: ", len(sys.argv))
+    print("The arguments are: ", str(sys.argv))
+
+    parser = argparse.ArgumentParser(description='SPA APP Handler Args')
+    __args_parser(parser)
+    args = parser.parse_args()
+	clean_up()
+	
+if __name__ == "__main__":
+    main(sys.argv)
+
+
+
+import argparse
+import subprocess
+import sys
+
+#arg1 = ['sshpass','-p',args.password,'ssh','-o','StrictHostKeyChecking=no','-p',args.port,args.username+'@'+args.hostname,' ',args.workspace]
+
+def cleanup():
+  if args.hostname:
+    subprocess.call(['sshpass','-p',args.password,'ssh','-o','StrictHostKeyChecking=no','-p',args.port,args.username+'@'+args.hostname,' ',args.workspace])
+    if subprocess.call(['echo','$?']) == 0:
+      print("Workspsace clean_up has been done on ACA host")
+    else:
+      print("didnt log in")
+  else:
+    print("Please mention arguemnts")
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-ip", "--hostname",required=False,action='store',help="mention the hostnem")
+parser.add_argument("-username", "--username",required=True,action='store',help="mention the username")
+parser.add_argument("-password","--password",required=True,action='store',help="Mention the pasword")
+parser.add_argument("-port","--port",required=True,action='store',help="Mention the port")
+parser.add_argument("-workspace","--workspace",required=True,action='store',help="Mention the workspace")
+args = parser.parse_args()
+print("The given hostname is {}, username is {}, password is {},port is {}, workspace is {}".format(args.hostname,args.username,args.password,args.port,args.workspace))
+
+cleanup()
+
+
+
+
+
+
+import os
+import sys
+import subprocess
+
+try :
+
+        D=dict()
+        aca = {"hostname": "aca","ip_address": "192.168.50.11","password": "vagrant", "username": "root", "port": "22"}
+        mag = {"hostname": "mag","ip_address": "192.168.50.11","password": "vagrant", "username": "vagrant","port":"22"}
+        D['mag']=mag
+        D['aca']=aca
+
+
+
+        #pw1 = aca.get("password")
+        # print(pw1)
+        # print(aca["hostname"])
+
+            args1 = ['sshpass','-p', aca["password"],'ssh', '-o', 'StrictHostKeyChecking=no','-p',aca["port"] ,aca["username"] +'@'+ aca["ip_address"]+ ' ' ,'rm -rf /opt/B*']
+        args2 = ['sshpass','-p', mag["password"],'ssh', '-o', 'StrictHostKeyChecking=no', mag["username"] +'@'+ mag["ip_address"]+ ' ' ,'sudo mkdir -p /opt/Sai123']
+
+        def cleanup(param):
+                param=sys.argv[1]
+                if param == "aca":
+                        print("executing on aca")
+                        #os.system('sshpass -p "x" ssh -o StrictHostKeyChecking=no root@192.168.50.11 "mkdir -p /opt/aca231"')
+                        subprocess.call(args1)
+                        if subprocess.call(['echo','$?']) == 0:
+                            print("Workspsace clean_up has been done on ACA host")
+                        else:
+                            print("didnt log in")
+                elif param == "mag":
+                        #os.system('sshpass -p "$x" ssh -o StrictHostKeyChecking=no root@192.168.50.11 "mkdir -p /opt/mag231"')
+                        subprocess.call(args2)
+                        print("Workspace clean_up has been done on Magellan host")
+                else:
+                        print("Mention the exact argument as {}".format(D.keys()))
+
+        cleanup(sys.argv[1])
+except IndexError:
+        print("Getting Index rrox, Please enter the argument as {}".format(D.keys()))
+        #subprocess.call(['sshpass','-p', aca["password"],'ssh', '-o', 'StrictHostKeyChecking=no','-p',aca["port"] ,aca["username"] +'@'+ aca["ip_address"]+ ' ' ,'rm -rf /opt/B*'])
+
+        python ws2.py --host 172.172.172.172 --user guy --password guyguy --port 22 --workspace /tmp/guy
+        SPAAppsHandler.py -n dcs -collect_cc --package_version 1.1-SNAPSHOT-${BUILD_ID}
+"""
