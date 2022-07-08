@@ -8,9 +8,6 @@ print('Hello %s from Jenkins %s' % (user['fullName'], version))
 nodes = server.get_nodes()
 print(nodes)
 
-#server.create_node('slave1')
-nodes = get_nodes()
-print(nodes)
 
 server.create_node(
     'slave1',
