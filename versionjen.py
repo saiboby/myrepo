@@ -5,7 +5,7 @@ version = server.get_version()
 print('Hello %s from Jenkins %s' % (user['fullName'], version))
 
 
-nodes = get_nodes()
+nodes = server.get_nodes()
 print(nodes)
 
 server.create_node('slave1')
