@@ -15,7 +15,7 @@ params = {
     'port': '22',
     'username': 'ec2-user',
     'credentialsId': 'hapro',
-    'host': 'newlb-2f94b85783160e54.elb.us-east-2.amazonaws.com'
+    'host': '3.12.155.135'
 }
 server.create_node(
     'slave1',
