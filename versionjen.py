@@ -20,5 +20,5 @@ server.create_node(
     remoteFS='/home/ec2-user/jenkins_home',
     labels='precise',
     exclusive=True,
-    launcher=jenkins.LAUNCHER_SSH
+    launcher=jenkins.LAUNCHER_SSH,
     launcher_params=params)
