@@ -4,7 +4,9 @@ user = server.get_whoami()
 version = server.get_version()
 print('Hello %s from Jenkins %s' % (user['fullName'], version))
 
-print(jobs)
+server.create_job('empty', jenkins.EMPTY_CONFIG_XML)
+jobs = server.get_jobs()
+print jobs
 
 server.create_node('slave1')
 nodes = get_nodes()
