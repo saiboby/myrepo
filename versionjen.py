@@ -6,9 +6,9 @@ print('Hello %s from Jenkins %s' % (user['fullName'], version))
 
 server.create_node('slave1')
 nodes = get_nodes()
-print nodes
+print(nodes)
 node_config = server.get_node_info('slave1')
-print node_config
+print(node_config)
 
 # create node with parameters
 params = {
