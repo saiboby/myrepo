@@ -14,18 +14,11 @@ print(nodes)
 node_config = server.get_node_info('slave1')
 print(node_config)
 
-# create node with parameters
-params = {
-    'port': '22',
-    'username': 'ec2-user',
-    'credentialsId': 'hapro',
-    'host': '3.12.155.135'
-}
+
 server.create_node(
     'slave1',
     nodeDescription='my test slave',
     remoteFS='/home/ec2-user/jenkins_home',
     labels='precise',
     exclusive=True,
-    launcher=jenkins.LAUNCHER_SSH,
-    launcher_params=params)
+    launcher=jenkins.LAUNCHER_SSH)
