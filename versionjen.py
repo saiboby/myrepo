@@ -8,6 +8,9 @@ server.create_job('empty', jenkins.EMPTY_CONFIG_XML)
 jobs = server.get_jobs()
 print(jobs)
 
+nodes = get_nodes()
+print(nodes)
+
 server.create_node('slave1')
 nodes = get_nodes()
 print(nodes)
