@@ -12,7 +12,7 @@ params = {
     'port': '22',
     'username': 'ec2-user',
     'credentialsId': 'hapro',
-    'host': '3.12.155.135'
+    'host': '3.135.213.219'
 }
 server.create_node(
     'slave22',
