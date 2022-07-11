@@ -1,5 +1,5 @@
 import jenkins
-server = jenkins.Jenkins('http://18.117.236.74:8080', username='admin', password='11c86245b541f48a18c37aa7fa4c7db03e')
+server = jenkins.Jenkins('http://3.144.139.42:8080', username='admin', password='admin')
 user = server.get_whoami()
 version = server.get_version()
 print('Hello %s from Jenkins %s' % (user['fullName'], version))
@@ -14,7 +14,7 @@ params = {
     'port': '22',
     'username': 'ec2-user',
     'credentialsId': 'hapro',
-    'host': '3.135.213.219'
+    'host': '18.223.23.233'
 }
 server.create_node(
     'slave22',
